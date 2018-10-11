@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>TIN HOT</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="toSearch()">
+        <ion-icon name="search" ></ion-icon>
+      </button>
+      <button ion-button (click)="changeFilter()">
+        <ion-icon name="grid" ></ion-icon>
+        <!-- <ion-icon name="keypad"></ion-icon> -->
+      </button>
+      
+      <!-- <button ion-button>
+        <ion-icon name="book"></ion-icon>
+      </button> -->
+    </ion-buttons>
+  </ion-navbar>
+  <ion-toolbar>
+    <ion-content #MultiItemsScrollingTabs  class="tabsContent">
+        <ion-segment  class="SwipedTabs-tabs" id="itemtabs" #itemtabs >
+          <ion-segment-button *ngFor='let tab of tabs ; let i = index ' id="tabTitle{{i}}" value="IngoreMe" (click)="selectTab(i)"
+          [ngStyle]="{'width': widthTabItem+'px!important'}"
+          [ngClass]='{ "SwipedTabs-activeTab" : ( this.SwipedTabsSlider  && ( this.SwipedTabsSlider.getActiveIndex() === i || (  tabs.length -1 === i&& this.SwipedTabsSlider.isEnd()))) }'   >
+          {{tab.name}}
+            <div [ngStyle]="{'background': tab.backgroundColor}" class="bg-btn"></div>
+          </ion-segment-button>
+        </ion-segment>
+        <!-- here is our dynamic line  "indicator"-->
+        <div id='indicator' class="SwipedTabs-indicatorSegment" [ngStyle]="{'background': colorSelect, 'width': tabWidth}"></div>
+    </ion-content>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-content padding>
+        <ion-slides #SwipedTabsSlider (ionSlideDrag)="animateIndicator($event)"
+        (ionSlideDidChange)="updateIndicatorPosition()"
+        (ionSlideWillChange)="scrollIndicatiorTab()" [pager]="false" >
+                <ion-slide *ngFor="let slide of tabs; let i=index">
+                  <div class="loading-home" *ngIf="!slide.loadSuccess">
+                    <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+                  </div>
+                  <page-posts [typeFilter]='typeFilterPost' [isInit]="isInitPostView"
+                  [idCategory]="slide.id" [nameCategory]="slide.name" [active]="slide.active"
+                  (loadSuccess)="postLoadingSuccess($event, i)" [countPost]='slide.count'></page-posts>
+                </ion-slide>
+        </ion-slides>
+</ion-content>

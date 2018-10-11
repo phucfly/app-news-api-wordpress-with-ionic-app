@@ -1,0 +1,206 @@
+page-home{
+    ion-toolbar.toolbar{
+        min-height: 44px!important;
+        padding: 0px!important;
+    }
+
+    /* android */
+    ion-toolbar .toolbar-content.toolbar-content-md{
+        height: 44px;
+    }
+    .swiper-slide img{
+        width: 100% !important;
+    }
+    .content-md{
+        background: transparent;
+    }
+    .SwipedTabs-tabs.segment-md .segment-button{
+        height: 100%;
+        border-bottom: none;
+        font-size: 1.2rem;
+        font-weight: 500;
+        line-height: 46px;
+        text-transform: none;
+        color: #fff;
+        position: relative;
+        opacity: 1;
+        padding: 0px 20px;
+    }
+    .SwipedTabs-tabs.segment-md .segment-button .bg-btn{
+        position: absolute;
+        bottom: 0px;
+        height: 90%;
+        width: 100%;
+        left: 0px;
+        border-top-left-radius: 8px!important;
+        border-top-right-radius: 8px!important;
+        z-index: -1;
+        transition: 0.3s ease height; 
+    }
+    .SwipedTabs-tabs.segment-md .segment-button.SwipedTabs-activeTab .bg-btn
+    {
+        height: 100%;
+    }
+    .SwipedTabs-tabs.segment-md{
+        height: 41px;
+        width: fit-content !important;
+    }
+    .toolbar-md ion-title{
+        left: 0;
+        top: 0;
+        padding: 0 90px 1px;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        pointer-events: none;
+    }
+    .toolbar-md{
+        padding: 0px;
+    }
+    .toolbar-title-md{
+        text-align: center;
+    }
+    
+    /* ios */
+    ion-toolbar .toolbar-content.toolbar-content-ios{
+        height: 44px;
+    }
+
+    .SwipedTabs-tabs.segment-ios .segment-button{
+        height: 100%;
+        border-bottom: none;
+        font-size: 1.2rem;
+        font-weight: 500;
+        line-height: 46px;
+        text-transform: none;
+        color: #fff;
+        position: relative;
+        opacity: 1;
+        padding: 0px 20px;
+        border: none;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+    }
+    .segment-ios .segment-button.segment-activated{
+        background: transparent;
+    }
+    .SwipedTabs-tabs.segment-ios .segment-button .bg-btn{
+        position: absolute;
+        bottom: 0px;
+        height: 90%;
+        width: 100%;
+        left: 0px;
+        border-top-left-radius: 8px!important;
+        border-top-right-radius: 8px!important;
+        z-index: -1;
+        transition: 0.3s ease height; 
+    }
+    .SwipedTabs-tabs.segment-ios .segment-button.SwipedTabs-activeTab .bg-btn
+    {
+        height: 100%;
+    }
+    .SwipedTabs-tabs.segment-ios{
+        height: 41px;
+        width: fit-content !important;
+    }
+    .toolbar-ios .segment-ios{
+        position: relative;
+    }
+    /* ***** ***** ***** ***** */
+    .tabsContent .scroll-content
+    {
+        overflow-x: scroll !important;
+        overflow-y: hidden;
+        background: transparent;
+    }
+    .tabsContent .SwipedTabs-indicatorSegment{
+        height: 3px;
+    }
+    .segment-button
+    {
+        max-width: initial !important;
+        flex: auto !important;
+        width: initial !important;
+    }
+    .slide-zoom{
+        height: inherit;
+    }
+    .scroll-content{
+        padding: 0px!important;
+        background: #eee;
+    }
+    .grid{
+        padding: 0px!important;
+    }
+
+    .loading-home{
+        height: 100%;
+        position: relative;
+        .lds-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateY(-50%) translateX(-50%);
+            width: 64px;
+            height: 64px;
+        }
+        .lds-ring div {
+            box-sizing: border-box;
+            display: block;
+            position: absolute;
+            width: 51px;
+            height: 51px;
+            margin: 6px;
+            border: 6px solid #488aff;
+            border-radius: 50%;
+            animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+            border-color: #488aff transparent transparent transparent;
+        }
+        .lds-ring div:nth-child(1) {
+            animation-delay: -0.45s;
+        }
+        .lds-ring div:nth-child(2) {
+            animation-delay: -0.3s;
+        }
+        .lds-ring div:nth-child(3) {
+            animation-delay: -0.15s;
+        }
+        @keyframes lds-ring {
+            0% {
+              transform: rotate(0deg);
+            }
+            100% {
+              transform: rotate(360deg);
+            }
+        }
+    }
+
+
+}
+
+// style NIGHT
+.night{
+        .toolbar-background-md, .toolbar-background-ios{
+            background: #000;
+        }
+        .post .meta-detail, .mask-share a, .detail-post .title, .detail-post .meta .author,
+        .bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default, .toolbar-title-md,
+        .bar-button-default-ios, .bar-button-default.bar-button-ios-default, .bar-button-clear-ios-default, .toolbar-title-ios{
+            color: #fff!important;
+        }
+        .content-ios{
+            background: transparent;
+        }
+        .type-1 .post.single-top, .type-1 ion-row, .scroll-content, .postMore{
+            background: #000; color: #fff;
+        }
+        .type-1 .post.single-top{
+            border-bottom-color: #444;
+        }
+        ion-header, .detail-post figure{ background: #000}
+        ion-header{border-bottom: 1px solid #444}
+        .footer-tab-btn{background: #000; border-top-color: #444;}
+        .tab-btn-item button, .btn-header-right{color: #fff!important}
+}

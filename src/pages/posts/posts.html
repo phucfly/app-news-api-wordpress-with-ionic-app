@@ -1,0 +1,121 @@
+<ion-content #list class="{{styleFilter[typeFilter]}}">
+    <ion-refresher  (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+        </ion-refresher>
+    <div *ngIf="typeFilter==0">
+      <ion-grid *ngIf="postMain">
+        <ion-row>
+          <ion-col class="post main" (click)="openDetailPost(postMain)">
+            <div class="image">
+              <img img-preloader="{{postMain.img}}" />
+            </div>
+            <div class="title">{{postMain.title}}</div>
+            <div class="meta-post">
+              <div class="meta-category">{{postMain.author}}</div>
+              <div class="meta-detail">
+                <i>{{postMain.time}}</i>
+              </div>
+            </div>
+            <div class="content" [innerHtml]="postMain.content"></div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+  
+        <div *ngFor="let item of listPost; let i=index"  >
+          <ion-grid *ngIf="(i%4==1||i%4==2)&&(i>0)">
+            <ion-row *ngIf="i%4==1" class="single-top">
+              <ion-col   class="post single-top" (click)="openDetailPost(item)">
+                <div class="image">
+                  <img img-preloader="{{item.img}}" />
+                </div>
+                <div class="title">{{item.title}}</div>
+                <div class="meta-post">
+                  <div class="meta-category">{{item.category}}</div>
+                  <div class="meta-detail">
+                    <!-- <i class="line">{{item[0].author}}</i> -->
+                    <i>{{item.time}}</i>
+                  </div>
+                </div>
+                <!-- <div class="content" [innerHtml]="item[0].content"></div> -->
+              </ion-col>
+            </ion-row>
+            <ion-row *ngIf="i%4==2" class="single-top">
+              <ion-col  class="post single-top" (click)="openDetailPost(item)">
+                <div class="image">
+                  <img img-preloader="{{item.img}}" />
+                </div>
+                <div class="title">{{item.title}}</div>
+                <div class="meta-post">
+                  <div class="meta-category">{{item.category}}</div>
+                  <div class="meta-detail">
+                    <!-- <i class="line">{{item[1].author}}</i> -->
+                    <i>{{item.time}}</i>
+                  </div>
+                </div>
+                <!-- <div class="content"  [innerHtml]="item[0].content"></div> -->
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+          <ion-grid *ngIf="(i%4==0)&&(i>0)">
+            <ion-row >
+              <ion-col col-6  class="post half-side odd" (click)="openDetailPost(listPost[i-1])">
+                  <div class="image">
+                    <img img-preloader="{{listPost[i+-1].img}}" />
+                  </div>
+                  <div class="title">{{listPost[i-1].title}}</div>
+                  <div class="meta-post">
+                    <div class="meta-category">{{listPost[i-1].category}}</div>
+                    <div class="meta-detail">
+             
+                      <i>{{listPost[i-1].time}}</i>
+                    </div>
+                  </div>
+
+                </ion-col>
+
+                <ion-col col-6  class="post half-side odd" (click)="openDetailPost(item)">
+                    <div class="image">
+                      <img img-preloader="{{item.img}}" />
+                    </div>
+                    <div class="title">{{item.title}}</div>
+                    <div class="meta-post">
+                      <div class="meta-category">{{item.category}}</div>
+                      <div class="meta-detail">
+                        <i>{{item.time}}</i>
+                      </div>
+                    </div>
+                  </ion-col>
+            </ion-row>
+          </ion-grid>
+        </div>
+    </div>
+    <div *ngIf="typeFilter==1">
+      <ion-grid *ngFor="let item of listPost; let i=index">
+        <ion-row>
+          <ion-col class="post" (click)="openDetailPost(item)">
+            <div class="top-type-1"> 
+                <div class="meta-post">
+                    <div class="meta-category">{{item.category}}</div>
+                    <div class="meta-detail">
+                      <i class="line">{{item.author}}</i><i>{{item.time}}</i>
+                    </div>
+                  </div>
+                  <div class="mask-share">
+                      <a href="#"><ion-icon ios="ios-bookmark-outline" md="ios-bookmark-outline"></ion-icon></a>
+                      <a href="#"><ion-icon ios="md-share" md="md-share"></ion-icon></a>
+                    </div>
+            </div>
+            <br>
+            <div class="title">{{item.title}}</div>
+            <div class="image" >
+              <img img-preloader="{{item.img}}" />
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+    <div class="loading" *ngIf="!canLoadMore">
+      <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+    </div>
+    
+</ion-content>

@@ -1,0 +1,13 @@
+<!-- Generated template for the ItemBaseComponent component -->
+<div  class="post single-top">
+  <div class="image">
+    <img img-preloader="{{post.img}}" />
+  </div>
+  <div class="title">{{post.title}}</div>
+  <div class="meta-post">
+    <div class="meta-category">{{post.category}}</div>
+    <div class="meta-detail">
+      <i>{{(post.time)?post.time:getTimeFormat(post.datetime_create)}}</i>
+    </div>
+  </div>
+</div>

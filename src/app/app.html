@@ -1,0 +1,23 @@
+<ion-menu [content]="content">
+  <ion-header class="menu-header">
+    <div>
+      <div class="icon-login">
+        <img src="../assets/imgs/fb-logo.png" alt="">
+      </div>
+      <div class="tx-login">Đăng nhập</div>
+    </div>
+  </ion-header>
+
+  <ion-content class="menu-tab-content">
+    <ion-list class="menu-item">
+      <button menuClose ion-item *ngFor="let p of pages,let i=index" (click)="openPage(p,i)">
+        <i class="fa {{p.icon}}" aria-hidden="true"></i> {{p.title}}
+      </button>
+      <button ion-item><i class="fa fa-facebook-official" aria-hidden="true"></i> Fanpage</button>
+    </ion-list>
+  </ion-content>
+  
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" class="{{isViewNight?'night':''}}" #content swipeBackEnabled="true" id="root-app"></ion-nav>

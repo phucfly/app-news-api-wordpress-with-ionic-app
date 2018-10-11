@@ -1,0 +1,26 @@
+<!--
+  Generated template for the SearchPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-searchbar [(ngModel)]="myInputSearch" (search)="onInput($event)" class="search" [showCancelButton]="shouldShowCancel" (ionCancel)="onCancel($event)">
+    </ion-searchbar>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+    <ion-list *ngIf="!doLoading">
+        <div *ngFor="let item of listPostSearch" (click)="openDetailPost(item)">
+          <item-base [post]="item" ></item-base>
+        </div>
+    </ion-list>
+  <div class="loading-home" *ngIf="doLoading">
+    <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+  </div>
+</ion-content>

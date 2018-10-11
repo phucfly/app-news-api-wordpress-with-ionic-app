@@ -1,0 +1,300 @@
+page-posts {
+    .title{
+        font-weight: bold;
+        font-size: 16px !important;
+    }
+    .type-1{
+       
+        .post.main{
+          
+            padding: 0px!important;
+            .image{
+                // height: 200px;
+                overflow: hidden;
+                position: relative;
+            }
+            .content{
+                display: none;
+            }
+            .image img{
+                // position: absolute;
+                // left: 0px;
+                // top: 50%;
+                // transform: translateY(-50%);
+                // max-height: none;
+                height: auto;
+                -webkit-filter: brightness(50%);
+                filter: brightness(50%);
+            }
+            .title{
+                position: absolute;
+                bottom: 27px;
+                padding: 0px 20px;
+                text-align: left;
+                color: #fff;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            .meta-post{
+                position: absolute;
+                z-index: 1;
+                color: #fff;
+                bottom: 5px;
+                font-size: 11px;
+                padding: 5px 20px;
+            }
+            .meta-category{
+                float: left;
+                margin-right: 5px;
+                padding: 0px 8px;
+                height: 13px;
+                background: #303fa9;
+                color: #fff;
+                line-height: 13px;
+            }
+            .meta-detail{
+                float: left;
+            }
+        }
+        .meta-detail{
+            i.line{
+                padding-left: 0px;
+            }
+            i{
+                padding-left: 3px;
+            }
+        }
+        ion-row.single-top{
+            padding: 0px 5px!important;
+        }
+        .post.single-top{
+            height: 80px;
+            overflow: hidden;
+            background: #fff;
+            border-bottom: 1px solid #eee;
+            padding: 5px 0px!important;
+            .image{
+                position: absolute;
+                height: 70px;
+                width: 110px;
+                img{
+                    width: 100%;
+                }
+            }
+            .content{
+                position: absolute;
+                margin-left: 90px;
+                text-align: left;
+                padding: 0px 10px;
+                bottom: 5px;
+                font-size: 12px;
+                color: #3a3838;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                p{
+                    margin: 0px;
+                }
+            }
+            .title{
+                position: absolute;
+                margin-left: 105px;
+                text-align: left;
+                padding: 4px 10px;
+                font-size: 14px;
+                height: 41px;
+                line-height: 18px;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            .meta-post{
+                position: absolute;
+                margin-left: 105px;
+                text-align: left;
+                font-size: 12px;
+                bottom: 10px;
+                padding: 0px 10px;
+                color: #aaa;
+                .meta-category{
+                    display: none;
+                }
+            }
+        }
+        .post.half-side{
+            .title{
+                font-size: 14px;
+                text-align: left;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            .meta-post{
+                font-size: 12px;
+                color: #aaa;
+                height: 10px;
+                margin-top: 5px;
+            }
+            .content{
+                display: none;
+            }
+            .meta-category{
+                display: none;
+            }
+            .meta-detail{
+                float: left; margin-right: 5px;
+            }
+            img{
+                // min-height: 120px;
+            }
+        }
+    
+        ion-grid{
+            margin-bottom: 5px;
+        }
+    
+        ion-row{
+            background: #fff;
+        }
+        i.line {
+            padding-right: 4px;
+            border-right: 1px solid #eee;
+        }
+        .post.odd{
+            padding-right: 2.5px!important;
+        }
+        .post.even{
+            padding-left: 2.5px!important;
+        }
+    }
+    
+    .default{
+        .post{
+            border-bottom: 1px solid #ddd;
+            margin-top: 10px;
+            .image{
+                width: 100%;
+                height: auto;
+                img{
+                    display: block;
+                    width: 100%;
+                    height: auto;
+                }
+            }
+            .mask-share {
+                position: absolute;
+                font-size: 11px;
+                top: 5px;
+                right: 10px;
+                a{
+                    color: #484848;
+                    padding: 0px 5px
+                }
+            }
+            .meta-post{
+                top: 5px;
+                font-size: 9px;
+            }
+            .meta-category{
+                float: left;
+                
+            }
+            .meta-detail{
+                float: left;
+                margin-left: 10px;
+                color: #484848;
+                i.line{
+                    padding-right: 7px;
+                    padding-left: 0px;
+                    border-right: 1px solid #484848;
+                }
+                i{
+                    padding-left: 3px;
+                    line-height: 13px;
+                }
+            }
+            .content{
+                font-size: 12px;
+                text-align: left;
+                p{
+                    line-height: 15px;
+                    max-height: 30px;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 2;
+                    overflow: hidden;
+                    margin: 0px;
+                }
+            }
+
+            .top-type-1{
+                width: 100%;
+            }
+
+            .title{
+                margin-bottom: 8px;
+                // position: absolute;
+                top: 20px;
+                font-size: 16px;
+                text-align: left;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            .meta-category {
+                padding: 0px 8px;
+                height: 13px;
+                background: #303fa9;
+                color: #fff;
+                line-height: 14px;
+            }
+        }
+    }
+
+    .loading{
+        .lds-ring {
+            display: inline-block;
+            position: relative;
+            width: 64px;
+            height: 64px;
+        }
+        .lds-ring div {
+            box-sizing: border-box;
+            display: block;
+            position: absolute;
+            width: 51px;
+            height: 51px;
+            margin: 6px;
+            border: 6px solid #488aff;
+            border-radius: 50%;
+            animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+            border-color: #488aff transparent transparent transparent;
+        }
+        .lds-ring div:nth-child(1) {
+            animation-delay: -0.45s;
+        }
+        .lds-ring div:nth-child(2) {
+            animation-delay: -0.3s;
+        }
+        .lds-ring div:nth-child(3) {
+            animation-delay: -0.15s;
+        }
+        @keyframes lds-ring {
+            0% {
+              transform: rotate(0deg);
+            }
+            100% {
+              transform: rotate(360deg);
+            }
+        }
+    }
+}

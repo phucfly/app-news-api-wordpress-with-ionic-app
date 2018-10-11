@@ -1,0 +1,7 @@
+{
+  "name": "docbao",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
